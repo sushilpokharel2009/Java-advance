@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:p="http://www.springframework.org/schema/p"
+       xmlns:aop="http://www.springframework.org/schema/aop"
+       xmlns:tx="http://www.springframework.org/schema/tx"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.0.xsd
+       http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-4.0.xsd
+       http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-4.0.xsd">
+       
+        <!--  <bean id ="s1" class = "com.stosh.model.Student" > 
+	       	<property name="studentName" value = "Krishna"></property>
+	       	<property name = "studentAddress" value = "Dang"></property>
+       </bean>
+       
+       <bean id = "s2" class = "com.stosh.model.Student">
+       		<property name = "studentName" value = "Shekhar"></property>
+       		<property name = "studentAddress" value = "Morang"></property>
+       </bean>
+       
+       <bean id ="t1" class ="com.stosh.model.Teacher">
+	       	<property name ="teacherName" value ="Janak"></property>	       	
+       </bean> 
+        -->
+       
+       
+       
+      <!--  ***************ref = "" takes what it is there in  id = "" of referenced bean************************************* -->
+      
+       <!--  <bean id ="s1" class = "com.stosh.model.Student">      
+	       	<property name="studentName" value = "Hari"></property>
+	       	<property name = "studentAddress" value = "Gulmi"></property>
+	       	<property name ="th" ref = "t1"></property>
+       </bean>
+       
+       <bean id = "s2" class = "com.stosh.model.Student">
+       		<property name = "studentName" value = "Ram"></property>
+       		<property name = "studentAddress" value = "Kapilvastu"></property>
+       </bean>
+       
+       <bean id ="t1" class ="com.stosh.model.Teacher">
+	       	<property name ="teacherName" value ="Dilip"></property>
+	       
+       </bean> -->
+       
+      <!--  ************************************************************************** -->
+     <!--   ************autowire = byType: this particular id must match with main method's getBean method's object*********************************************************** -->
+     
+      <!-- <bean id ="s1" class = "com.stosh.model.Student" autowire = "byType">      
+	       	<property name="studentName" value = "Sangita"></property>
+	       	<property name = "studentAddress" value = "Palpa"></property>	       	
+       </bean>
+       
+       <bean id = "s2" class = "com.stosh.model.Student">
+       		<property name = "studentName" value = "Mohan"></property>
+       		<property name = "studentAddress" value = "Illam"></property>
+       </bean>
+       
+       <bean id ="t1" class ="com.stosh.model.Teacher">
+	       	<property name ="teacherName" value ="Raj"></property>
+	       	
+       </bean>  --> 
+       
+       
+       <!-- ********************************************************************** -->
+       
+       <!-- *****autowire = byName: must match the reference variable with bean id specifically if there are more than one beans but not with main method's getBean's object************ --> 
+       
+      <!--  <bean id ="s1" class = "com.stosh.model.Student" autowire = "byName">      
+	       	<property name="studentName" value = "Aruna"></property>
+	       	<property name = "studentAddress" value = "Arghakanchi"></property>	       	
+       </bean>
+       
+       <bean id = "s2" class = "com.stosh.model.Student">
+       		<property name = "studentName" value = "Neelam"></property>
+       		<property name = "studentAddress" value = "Sunsari"></property>
+       </bean>
+       
+       <bean id ="t1" class ="com.stosh.model.Teacher">
+	       	<property name ="teacherName" value ="Kajol"></property>
+	       	
+       </bean>
+       <bean id ="t2" class ="com.stosh.model.Teacher">
+	       	<property name ="teacherName" value ="Raman"></property>
+	       	
+       </bean>
+       <bean id ="th" class ="com.stosh.model.Teacher">
+	       	<property name ="teacherName" value ="Kancha"></property>
+	       	
+       </bean>  -->
+       
+      <!--  ********************************************************************************* -->
+      
+  <bean id ="s1" class = "com.stosh.model.Student" autowire = "byName" scope = "singleton">      
+	       	<property name="studentName" value = "Aruna"></property>
+	       	<property name = "studentAddress" value = "Arghakanchi"></property>	       	
+       </bean>
+       
+       <bean id = "s2" class = "com.stosh.model.Student">
+       		<property name = "studentName" value = "Neelam"></property>
+       		<property name = "studentAddress" value = "Sunsari"></property>
+       </bean>
+       
+       <bean id ="t1" class ="com.stosh.model.Teacher">
+	       	<property name ="teacherName" value ="Kajol"></property>
+	       	
+       </bean>
+       <bean id ="t2" class ="com.stosh.model.Teacher">
+	       	<property name ="teacherName" value ="Raman"></property>
+	       	
+       </bean>
+       <bean id ="th" class ="com.stosh.model.Teacher">
+	       	<property name ="teacherName" value ="Kancha"></property>
+	       	
+       </bean>
+      
+       
+       
+       
+      <!--  ************************************************************************************ -->
+      
+   <!--  <bean id ="s1" class = "com.stosh.model.Student" autowire = "byName"  scope = "prototype">      
+	       	<property name="studentName" value = "Aruna"></property>
+	       	<property name = "studentAddress" value = "Arghakanchi"></property>	       	
+       </bean>
+       
+       <bean id = "s2" class = "com.stosh.model.Student">
+       		<property name = "studentName" value = "Neelam"></property>
+       		<property name = "studentAddress" value = "Sunsari"></property>
+       </bean>
+       
+       <bean id ="t1" class ="com.stosh.model.Teacher">
+	       	<property name ="teacherName" value ="Kajol"></property>
+	       	
+       </bean>
+       <bean id ="t2" class ="com.stosh.model.Teacher">
+	       	<property name ="teacherName" value ="Raman"></property>
+	       	
+       </bean>
+       <bean id ="th" class ="com.stosh.model.Teacher">
+	       	<property name ="teacherName" value ="Kancha"></property>
+	       	
+       </bean> -->
+      
+
+      
+  </beans>
